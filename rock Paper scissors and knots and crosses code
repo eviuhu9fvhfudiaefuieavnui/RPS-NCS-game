@@ -58,9 +58,9 @@ class GameSuite
 
 		
 		int index = int.Parse(input) - 1; 
-		board[index] = player;
+		board[index] = player; // places x or o
 
-		// 4. Checking for a win (Check every set of 3 manually)
+		// 4. Checking for a win
 		bool win = false;
 		// Rows
 		if (board[0] == board[1] && board[1] == board[2]) win = true;
@@ -114,7 +114,7 @@ class GameSuite
             
             if (!int.TryParse(input, out int userInput) || userInput < 0 || userInput > 3)
             {
-                Console.WriteLine("Pick a number 0-3!");
+                Console.WriteLine("Pick the following input 0-3!");
                 continue;                              
             }
 
@@ -127,9 +127,9 @@ class GameSuite
             {
                 Console.WriteLine("Draw!");
             }
-            else if ((userInput == 1 && computerInput == 3) || 
-                     (userInput == 2 && computerInput == 1) || 
-                     (userInput == 3 && computerInput == 2))
+            else if ((userInput == 1 && computerInput == 3) || // player chose rock computer choose scissors										  
+                     (userInput == 2 && computerInput == 1) || // player choose paper computer choose rock
+                     (userInput == 3 && computerInput == 2))   // player choose scissors computer choose paper
             {
                 Console.WriteLine("You Win!");
             }
@@ -138,8 +138,12 @@ class GameSuite
                 Console.WriteLine("You Lose!");
             }
             
+			Console.WriteLine($"The player chose {userInput}");
+		    Console.WriteLine($"computerInput {computerInput}");
+			
             Console.WriteLine("Press Enter to continue game ");
-            Console.ReadLine();                         
+            Console.ReadLine(); 
+	
         }
     }
 
