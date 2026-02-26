@@ -139,7 +139,7 @@ class GameSuite
             }
             
 			Console.WriteLine($"The player chose {userInput}");
-		    Console.WriteLine($"computerInput {computerInput}");
+		    Console.WriteLine($"computer chose {computerInput}");
 			
             Console.WriteLine("Press Enter to continue game ");
             Console.ReadLine(); 
